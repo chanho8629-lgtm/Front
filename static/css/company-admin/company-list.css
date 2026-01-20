@@ -256,3 +256,48 @@
 .btn-tertiary-mint.btn-icon .icon-filter {
     background: url(/static/images/icon_filter.svg) no-repeat;
 }
+
+/* 다운로드 버튼 영역 */
+.wrap-section .box-header, .wrap-section .box-footer, .wrap-section~.wrap-btn-group {
+    display: flexbox;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 0 32px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -ms-flex-pack: space-between;
+}
+
+.wrap-section .box-header {
+    border-bottom: 1px solid #e6eaed;
+}
+
+
+.wrap-section .box-header .box-option, .wrap-section .box-footer .box-right, .wrap-btn-group .box-right {
+    margin-left: auto;
+}
+
+.btn-secondary-outline {
+    border: 1px solid #cdd3d8;
+    background: #fff;
+    color: #495057;
+}
+
+.wrap-section .box-header .box-tit>*, .wrap-section .box-header .box-option>*, .wrap-section .box-footer .box-left>*, .wrap-section .box-footer .box-right>* {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.wrap-tbl .tbl dl.vertical>dt .box-right>*, .wrap-section .box-header .box-option>*, .wrap-section .box-footer a~.btn, .wrap-section .box-footer .btn~a, .wrap-section .box-footer .btn~.btn, .wrap-section~.wrap-btn-group .btn~.btn {
+    margin-left: 12px;
+}
+
+.wrap-section .box-header .box-option>a .btn, .wrap-section .box-header .box-option>.btn, .wrap-section .box-header .box-tit>.btn {
+    min-width: 100px;
+}
+
+.btn-secondary-outline.btn-icon .icon-download {
+    background: url(/static/images/icon_download.svg) no-repeat 50% 50%;
+}
