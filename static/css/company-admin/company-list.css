@@ -599,7 +599,8 @@
     color: #868e96;
 }
 
-.select2-hidden-accessible {
+/* 페이지 사이즈 숨기기 */
+/* .select2-hidden-accessible {
     overflow: hidden !important;
     position: absolute !important;
     width: 1px !important;
@@ -609,7 +610,7 @@
     padding: 0 !important;
     border: 0 !important;
     clip: rect(0 0 0 0) !important;
-}
+} */
 
 .select2-container {
     display: inline-block;
@@ -638,7 +639,7 @@
     height: 32px;
 }
 
-.select2-container .select2-selection--single .select2-selection__rendered {
+.select2-container .select2-selection--single .select2-selection-rendered {
     overflow: hidden;
     display: block;
     padding-left: 16px;
@@ -650,14 +651,14 @@
     white-space: nowrap;
 }
 
-.select2-single-search.small+.select2-container .select2-selection--single .select2-selection__rendered, .select2-single.small+.select2-container .select2-selection--single .select2-selection__rendered {
+.select2-single-search.small+.select2-container .select2-selection--single .select2-selection-rendered, .select2-single.small+.select2-container .select2-selection--single .select2-selection-rendered {
     padding-left: 12px;
     padding-right: 38px;
     font-size: 12px;
     line-height: 32px;
 }
 
-.select2-container .select2-selection--single .select2-selection__arrow {
+.select2-container .select2-selection--single .select2-selection-arrow {
     position: absolute;
     top: 0;
     right: 0;
@@ -665,12 +666,12 @@
     height: 40px;
 }
 
-.select2-single-search.small+.select2-container .select2-selection--single .select2-selection__arrow, .select2-single.small+.select2-container .select2-selection--single .select2-selection__arrow {
+.select2-single-search.small+.select2-container .select2-selection--single .select2-selection-arrow, .select2-single.small+.select2-container .select2-selection--single .select2-selection-arrow {
     width: 32px;
     height: 32px;
 }
 
-.select2-container .select2-selection--single .select2-selection__arrow b {
+.select2-container .select2-selection--single .select2-selection-arrow b {
     position: absolute;
     top: -2px;
     right: 0;
