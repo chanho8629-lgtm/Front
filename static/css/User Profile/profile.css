@@ -2,7 +2,9 @@ body {
     word-break: keep-all;
     overflow-wrap: anywhere;
     font-feature-settings: "case";
-}@font-face {
+}
+
+@font-face {
     font-family: 'Pretendard';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
     font-weight: 100;
@@ -65,7 +67,7 @@ body {
     font-display: swap;
 }
 
-#GNB{
+#GNB {
     position: fixed;
     z-index: 16;
     right: 0;
@@ -76,7 +78,8 @@ body {
     border-top: 1px solid #f2f4f6;
     background-color: #fff;
 }
-.NavigationTab-container{
+
+.NavigationTab-container {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -86,20 +89,22 @@ body {
     width: 100%;
     padding-block: 8px;
 }
-.NavigationTab-icon{
+
+.NavigationTab-icon {
     display: flex;
     align-items: center;
 }
-.NavigationTab-name{
+
+.NavigationTab-name {
     font-size: 10px;
     font-weight: 400;
     line-height: 1.5;
     color: #868e96;
 }
-.NotificationBadge{
 
-}
-.NotificationBadge{
+.NotificationBadge {}
+
+.NotificationBadge {
     position: absolute;
     top: 1px;
     right: calc(50% - 15px);
@@ -113,7 +118,8 @@ body {
     padding: 0 4px;
     border-radius: 100%;
 }
-.NotificationBadge.type-new{
+
+.NotificationBadge.type-new {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -123,13 +129,15 @@ body {
     box-sizing: border-box;
     flex-shrink: 0;
 }
-.NavigationTab-name{
+
+.NavigationTab-name {
     font-size: 10px;
     font-weight: 400;
     line-height: 1.5;
     color: #868e96;
 }
-.NavigationTab-name.active{
+
+.NavigationTab-name.active {
     font-weight: 700;
     color: #212529;
 }
@@ -328,6 +336,8 @@ section {
 button:not(:disabled) {
     cursor: pointer;
 }
+
+
 
 .CountryChangeButton_container {
     display: flex;
@@ -654,36 +664,15 @@ a.Button_button__1U5se {
     justify-content: center;
     text-decoration: none;
 }
+
 .MyGGshSupporterProfileCard_profileContainer::after {
     display: block;
     clear: both;
     content: "";
 }
 
-.Button_button__1U5se {
-    position: relative;
-    transition-property: background-color, border-color, color, opacity;
-    transition-duration: .15s;
-    border: 1px solid #cdd3d8;
-    border-radius: 4px;
-    background-color: #0000;
-    cursor: pointer;
-    padding-inline: 24px;
-    height: 48px;
-    vertical-align: middle;
-    text-decoration: none;
-    white-space: nowrap;
-    color: #495057;
-    font-size: 16px;
-    -webkit-appearance: none;
-    box-sizing: border-box;
-    line-height: 1.5;
-}
-
-.Button_button__1U5se span {
-    display: inline-flex;
-    align-items: center;
-    vertical-align: top;
+.Button_button__1U5se span svg {
+    display: inline-block;
 }
 
 .MyGGshSupporterProjectInfoCard_container {
@@ -718,6 +707,44 @@ strong {
     flex-direction: column;
     align-items: center;
     width: 64px;
+}
+
+.ReversalLabelBadge_badge {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-clip: padding-box;
+}
+
+.ReversalLabelBadge_badge.ReversalLabelBadge_circular {
+    border-radius: 16px;
+}
+
+.LabelBadge_badge.LabelBadge_gray.LabelBadge_solid {
+    border: solid 1px #495057;
+    background-color: #495057;
+    color: #fff;
+}
+
+.ReversalLabelBadge_badge.ReversalLabelBadge_sm {
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 1.5;
+    padding: 0 4px;
+    height: 18px;
+}
+
+.MultiBoardAdBanner_container .MultiBoardAdBanner_adBadge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+
+.ReversalLabelBadge_badge.ReversalLabelBadge_outlined {
+    border: solid 1px #fff;
+    background-color: #0000;
+    color: #fff;
 }
 
 .MyGGshSupporterProjectInfoCard_project .MyGGshSupporterProjectInfoCard_projectLink .MyGGshSupporterProjectInfoCard_projectContent .MyGGshSupporterProjectInfoCard_link {
@@ -868,12 +895,13 @@ strong {
 
 .RollingBannerCard_container {
     overflow: hidden;
+    width: 366px;
 }
 
 .RollingBannerCard_container .RollingBannerCard_bannerWrapper {
     display: flex;
     flex-direction: row;
-    width: 300%;
+    width: 1850px;
 }
 
 .Section_container .Section_header .Section_titleWrapper .Section_title__Wrlok.Section_sm {
@@ -902,8 +930,8 @@ strong {
     overflow-wrap: anywhere;
 }
 
-.WishIconButton_container .WishIconButton_icon__2n1ra path {
-    fill: #21252966;
+.WishIconButton_container .WishIconButton_icon path {
+    fill: #21252966 !important;
     stroke: #fff;
     transition: fill .25s ease-in-out;
 }
@@ -912,19 +940,28 @@ strong {
     fill: currentColor;
 }
 
-.ThumbnailImage_container .ThumbnailImage_overlay__PwkuO>div {
+.ThumbnailImage_container_wish {
+    display: block;
     position: absolute;
-    z-index: 1;
-    outline: none;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    border-radius: 8px;
+    background-color: #f2f4f6;
+    overflow: hidden;
+    color: #cdd3d8;
+    inset: 0;
 }
 
-.ThumbnailImage_container .ThumbnailImage_overlay__PwkuO .ThumbnailImage_topLeft {
+.ThumbnailImage_container_wish img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ThumbnailImage_container .ThumbnailImage_overlay .ThumbnailImage_topLeft {
     top: 8px;
     left: 8px;
 }
 
-.ThumbnailImage_container .ThumbnailImage_overlay__PwkuO .ThumbnailImage_topRight {
+.ThumbnailImage_container .ThumbnailImage_overlay .ThumbnailImage_topRight {
     top: 0;
     right: 0;
 }
@@ -937,27 +974,160 @@ button {
     padding: 8px;
 }
 
+.WishIconButton_container .WishIconButton_icon.WishIconButton_isActive path {
+    fill: #f66 !important;
+    stroke: #fff;
+}
+
+.WishIconButton_container {
+    pointer-events: auto !important;
+    z-index: 9999;
+}
+
+.ThumbnailImage_overlay {
+    pointer-events: auto;
+}
+
+.Content_container {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+}
+
+.HomeHorizontalCard_container {
+    display: flex;
+    position: relative;
+    align-items: center;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.PriceKeyTitle_container.PriceKeyTitle_md- {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.PriceKeyTitle_container .PriceKeyTitle_price {
+    color: #00c4c4;
+}
+
+.PriceKeyTitle_container .PriceKeyTitle_percentage {
+    color: #f66;
+}
+
+.Title_container {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    line-clamp: 2;
+    min-height: 3em;
+    line-height: 1.5em;
+    overflow-wrap: anywhere;
+}
+
+.BadgeGroup_container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.LabelBadge_badge.LabelBadge_gray.LabelBadge_tint {
+    border: solid 1px #f2f4f6;
+    background-color: #f2f4f6;
+    color: #495057;
+}
+
+.SupporterClubBannerCard_container.SupporterClubBannerCard_mintBanner {
+    border: solid 1px #73715da3;
+    background-color: #f5db123d;
+}
+
+.SupporterClubBannerCard_container {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: -14px;
+    border-radius: 8px;
+    padding: 10px 16px;
+    word-break: keep-all;
+    color: #868e96;
+}
+
+.SupporterClubBannerCard_container .SupporterClubBannerCard_iconWrapper {
+    display: flex;
+    flex: none;
+    margin-right: 8px;
+    width: 24px;
+    height: 24px;
+}
+
+.SupporterClubBannerCard_container .SupporterClubBannerCard_message {
+    margin: auto 0;
+    width: 100%;
+}
+
+.SupporterClubBannerCard_container .SupporterClubBannerCard_message .SupporterClubBannerCard_emphasis {
+    color: #212529;
+}
+
+
+.SupporterClubBannerCard_container .SupporterClubBannerCard_iconWrapper .SupporterClubBannerCard_icon {
+    margin: auto 0;
+    width: 24px;
+}
+
+.BadgeGroup_container .BadgeGroup_badge {
+    font-weight: 700;
+}
+
+.LabelBadge_badge.LabelBadge_sm {
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 1.5;
+    padding: 0 4px;
+    height: 18px;
+}
+
+.LabelBadge_badge {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 4px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+
+.PriceKeyTitle_container {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    overflow-wrap: anywhere;
+    white-space: nowrap;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+
 .ThumbnailImage_container {
     position: relative;
     overflow: hidden;
     flex: none;
     aspect-ratio: 16 / 9;
     background-color: #f2f4f6;
-}
-
-.ThumbnailImage_container.ThumbnailImage_round {
-    border-radius: 8px;
-}
-
-.ThumbnailImage_container .ThumbnailImage_image {
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    object-fit: cover;
-}
-
-.ThumbnailImage_container .ThumbnailImage_image.ThumbnailImage_isLoaded {
-    opacity: 1;
 }
 
 .Section_container .Section_header .Section_titleWrapper .Section_title__Wrlok {
@@ -973,6 +1143,80 @@ button {
     height: 1px;
     background-color: #f2f4f6;
 }
+
+.SectionBox_container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    margin: 0 -16px;
+    gap: 16px;
+}
+
+.SectionBox_container .SectionBox_title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    display: block;
+    padding: 0 16px;
+    color: #212529;
+}
+
+.SectionBox_container .SectionBox_list {
+    display: flex;
+    padding: 0 16px;
+    width: 100%;
+    min-height: 168px;
+    overflow: auto;
+    gap: 8px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+
+.Card_container .Card_content {
+    display: flex;
+}
+
+
+.ThumbnailImage_container.ThumbnailImage_round {
+    border-radius: 8px;
+}
+
+.ThumbnailImage_container .ThumbnailImage_image.ThumbnailImage_isLoaded {
+    opacity: 1;
+}
+
+.ThumbnailImage_container .ThumbnailImage_image {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    object-fit: cover;
+}
+
+.ThumbnailImage_container .ThumbnailImage_overlay>div {
+    position: absolute;
+    z-index: 1;
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.Emblem_container.Emblem_sm__sAh9m {
+    width: 32px;
+    height: 32px;
+}
+
+.Emblem_container {
+    overflow: hidden;
+}
+
+.Emblem_container .Emblem_image {
+    aspect-ratio: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
 
 .RollingBannerCard_banner {
     font-size: 12px;
@@ -1001,6 +1245,10 @@ button {
     margin-top: 16px;
     width: 100%;
     gap: 6px;
+}
+
+.ReactModalPortal{
+    display: none;
 }
 
 .RollingBannerCard_navigationWrapper .RollingBannerCard_navigationDot {
@@ -1069,9 +1317,6 @@ button {
     gap: 8px;
 }
 
-.Card_container .Card_content {
-    display: flex;
-}
 
 .MultiBoardAdBannerDisplay_container {
     display: flex;
@@ -1128,6 +1373,221 @@ button {
     text-align: center;
 }
 
+
+.MultiBoardBannerDisplay_container {
+    display: flex;
+    gap: 16px;
+}
+
+.MultiBoardAdBanner_container {
+    position: relative;
+    border-radius: 8px;
+    background-color: #f2f4f6;
+    width: 100%;
+    height: 121px;
+}
+
+.MultiBoardAdBanner_container .MultiBoardAdBanner_contents {
+    display: flex;
+    align-items: center;
+    border-radius: 8px 0 0 8px;
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0) 7.23%, rgba(0, 0, 0, .32) 56.15%);
+    padding: 0 16px;
+    width: 240px;
+    height: 100%;
+}
+
+.MultiBoardAdBanner_container .MultiBoardAdBanner_contents .MultiBoardAdBanner_mainCopy {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    overflow-wrap: anywhere;
+    display: -webkit-box;
+    white-space: normal;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    max-width: 180px;
+    color: #fff;
+}
+
+
+.Toast_container {
+    position: fixed;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-20px);
+    width: 90%;
+    max-width: 480px;
+    background-color: #212529;
+    color: #fff;
+    padding: 16px 20px;
+    border-radius: 12px;
+    z-index: 99999;
+    opacity: 0;
+    pointer-events: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.Button_button__1U5se.Button_md .button_close {
+    padding-inline: 16px;
+    height: 40px;
+    font-size: 14px;
+}
+
+.Toast_container.show {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateX(-50%) translateY(0);
+}
+
+
+.Toast_content {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #fff;
+    pointer-events: all;
+}
+
+.ActivityUIView_container {
+    flex: 1;
+}
+
+.ActivityUIView_container .ActivityUIView_text {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    flex: 1 0 0;
+    white-space: pre-line;
+}
+
+.ActivityUIView_link {
+    right: 0px;
+    color: #00c4c4;
+    font-weight: 500;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+.ConfirmModal_sizeFull {
+    border-radius: 0 !important;
+    padding-top: 24px;
+    width: 100%;
+    height: 100%;
+    max-height: 100vh !important;
+}
+
+.ConfirmModal_overlay {
+    display: inline-flex;
+    position: fixed;
+    inset: 0;
+    align-items: center;
+    justify-content: center;
+    z-index: 32;
+    background-color: #0000;
+    overflow: hidden;
+}
+
+.ConfirmModal_contentAfterOpen,
+.ConfirmModal_contentAfterOpen,
+.ConfirmModal_sizeFull.ConfirmModal_contentAfterOpen {
+    transform: translateY(0);
+    transition-timing-function: ease-in;
+    transition-delay: 0ms;
+}
+
+.ConfirmModal_sizeFull {
+    transform: translateY(55%);
+    transition: .15s ease-out 50ms;
+    transition-property: transform;
+}
+
+.ConfirmModal_confirmModal {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    outline: none;
+    border-radius: 16px;
+    box-shadow: 0 32px 40px -2px #0a16461f, 0 0 5px #0a16460f;
+    background: #fff;
+    padding-block: 24px;
+    max-height: calc(100vh - 160px);
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+.ConfirmModal_confirmModal .ConfirmModal_header {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 16px;
+}
+
+.ConfirmModal_confirmModal .ConfirmModal_closeIconRoot {
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+.Button_button__1U5se.Button_text,
+.Button_button__1U5se.Button_textLink__3T2Bb .button_close {
+    border: 0;
+    border-color: #0000;
+    padding: 0;
+    height: auto;
+}
+
+
+.Button_button__1U5se span {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: top;
+}
+
+.ConfirmModal_confirmModal .ConfirmModal_title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #212529;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+}
+
+.ConfirmModal_confirmModal .ConfirmModal_content {
+    display: inline-flex;
+    flex-direction: column;
+    overflow: auto;
+    color: #495057;
+    margin-top: 12px;
+}
+
 .Button_button__1U5se {
     position: relative;
     transition-property: background-color, border-color, color, opacity;
@@ -1147,3 +1607,314 @@ button {
     box-sizing: border-box;
     line-height: 1.5;
 }
+
+.RecentView_contents {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 100%;
+    max-width: 768px;
+}
+
+.Tabs_tabsWrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.RecentView_contents .RecentView_content {
+    position: relative;
+    margin-left: -16px;
+    width: calc(100% + 32px);
+    overflow: hidden;
+}
+
+.WishView_container {
+    display: block;
+    padding: 0 16px;
+    height: 100%;
+}
+
+.CategoryFilter_container {
+    display: flex;
+    flex-direction: column;
+    margin: 4px auto 0;
+    padding: 8px 0;
+    overflow: hidden;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    gap: 8px;
+}
+
+.WishView_container .WishView_list {
+    position: relative;
+    margin-top: 11px;
+    overflow: auto;
+}
+
+.TableLayout_container {
+    display: grid;
+    width: 100%;
+}
+
+.WishCard_container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+.HomeHorizontalCard_container .HomeHorizontalCard_content {
+    display: flex;
+    width: 100%;
+    gap: 12px;
+}
+
+.HomeHorizontalCard_container .HomeHorizontalCard_content .HomeHorizontalCard_thumbnailBox {
+    position: relative;
+    margin: auto 0;
+}
+
+.HomeHorizontalCard_container .HomeHorizontalCard_content .HomeHorizontalCard_thumbnailBox .HomeHorizontalCard_thumbnailWrap {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.HomeHorizontalCard_container .HomeHorizontalCard_content .HomeHorizontalCard_thumbnailBox .HomeHorizontalCard_thumbnailWrap:before {
+    display: block;
+    padding-top: 60%;
+    width: 168px;
+    content: "";
+}
+
+.HomeHorizontalCard_container .HomeHorizontalCard_content .HomeHorizontalCard_thumbnailBox .HomeHorizontalCard_thumbnailWrap .HomeHorizontalCard_thumbnail {
+    border-radius: 8px;
+}
+
+
+.Badges_container.Badges_sm {
+    left: 8px;
+    top: 8px;
+}
+
+.Badges_container {
+    display: flex;
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    gap: 8px;
+}
+
+.Badges_container>img {
+    object-fit: cover;
+}
+
+.HomeHorizontalCard_container .HomeHorizontalCard_content .HomeHorizontalCard_infoBox {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+    gap: 8px;
+}
+
+.HomeHorizontalCard_container .HomeHorizontalCard_content .HomeHorizontalCard_infoBox .HomeHorizontalCard_info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.Title_title {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    overflow-wrap: anywhere;
+    display: -webkit-box;
+    white-space: normal;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    height: 42px;
+    color: #212529;
+    word-break: normal;
+    overflow-wrap: normal;
+}
+
+.PriceInfoWrapper_container {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    color: #00c4c4;
+    gap: 4px;
+}
+
+.HomeHorizontalCard_container .HomeHorizontalCard_content .HomeHorizontalCard_infoBox .HomeHorizontalCard_info .HomeHorizontalCard_infoStringWrapper,
+.HomeHorizontalCard_container .HomeHorizontalCard_content .HomeHorizontalCard_infoBox .HomeHorizontalCard_info .HomeHorizontalCard_priceInfoWrapper {
+    margin-top: 2px;
+}
+
+
+.PriceInfoWrapper_container .PriceInfoWrapper_icon {
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+}
+
+.PriceInfoWrapper_container .PriceInfoWrapper_discountRate {
+    color: #f66;
+}
+
+.HomeHorizontalCard_container .HomeHorizontalCard_content .HomeHorizontalCard_infoBox .HomeHorizontalCard_info .HomeHorizontalCard_badgeGroupWrapper {
+    display: flex;
+    margin-top: 4px;
+    gap: 8px;
+}
+
+.StoreRatingWrapper_ratingWrapper {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.StoreRatingWrapper_ratingWrapper .StoreRatingWrapper_rating {
+    margin-right: 0;
+}
+
+.RatingScore_container {
+    display: flex;
+    margin-right: 8px;
+}
+
+.RatingScore_smCard02 .RatingScore_icon {
+    margin-top: 3px;
+    margin-bottom: 5px;
+    width: 12px;
+    height: 12px;
+}
+
+.RatingScore_container .RatingScore_icon {
+    background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZmlsbD0idHJhbnNwYXJlbnQiIGQ9Ik0wIDBoMzJ2MzJIMHoiLz4KICAgICAgICA8cGF0aCBkPSJNMCAwaDMydjMySDB6Ii8+CiAgICAgICAgPHBhdGggZD0ibTE2IDI2Ljk5NC03LjYyIDQuNzFjLS45MzguNTgtMi4xNjQuMjgtMi43MzgtLjY2OS0uMjc0LS40NTQtLjM1OC0xLS4yMzctMS41MTlsMi4wNzEtOC43OS02Ljc4LTUuODc4YTIuMDMzIDIuMDMzIDAgMCAxLS4yMTctMi44NDIgMS45ODggMS45ODggMCAwIDEgMS4zNTUtLjY5OWw4Ljg5OC0uNzIxIDMuNDI5LTguMzQ1YTEuOTg0IDEuOTg0IDAgMCAxIDMuNjc4LjAwMWwzLjQyOCA4LjM0NCA4LjkuNzIxYTIuMDEgMi4wMSAwIDAgMSAxLjgyNyAyLjE3MSAyLjAyNSAyLjAyNSAwIDAgMS0uNjkgMS4zN2wtNi43ODEgNS44NzggMi4wNzIgOC43OWEyLjAxOCAyLjAxOCAwIDAgMS0xLjQ3NSAyLjQzIDEuOTczIDEuOTczIDAgMCAxLTEuNS0uMjQzTDE2IDI2Ljk5M3oiIGZpbGw9IiNGRkJFMUEiIGZpbGwtcnVsZT0ibm9uemVybyIvPgogICAgPC9nPgo8L3N2Zz4K);
+    background-size: contain;
+}
+
+.FatingScore_smCard02__3cJAW .RatingScore_score {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-left: 3px;
+    color: #495057;
+}
+
+.LabelBadge_container {
+    position: relative;
+    flex-shrink: 0;
+    vertical-align: middle;
+    line-height: 0;
+}
+
+.CardSpinner_container {
+    display: none;
+    position: absolute;
+    inset: 0;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    border-radius: 8px;
+}
+
+.Loader_container {
+    z-index: 8;
+    inset: 0;
+    background-color: #ffffff73;
+}
+
+.Loader_container .Loader_inner_- {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.Loader_circular {
+    transform-origin: 100% 100%;
+    animation: Loader_waffle-loader-rotate__2pGiz 1.5s linear infinite;
+}
+
+.Loader_path.Loader_mint {
+    animation: Loader_waffle-loader-dash__1qpq9 1.5s ease-in-out infinite, Loader_waffle-loader-color-mint__3erEo 3s ease-in-out infinite;
+}
+
+.Loader_path {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+    animation: Loader_waffle-loader-dash__1qpq9 1.5s ease-in-out infinite, Loader_waffle-loader-color__sANH- 3s ease-in-out infinite;
+    stroke-linecap: round;
+}
+
+.HomeHorizontalCard_container .HomeHorizontalCard_actionWrapper {
+    position: absolute;
+    top: 3.6px;
+    left: 168px;
+}
+
+@media screen and (max-width: 768px) {
+    .WishButton_button.WishButton_smallArea {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.WishButton_button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+    outline: none;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.WishButton_button svg {
+    margin: 0 auto;
+    width: 24px;
+    height: 24px;
+    pointer-events: none;
+    will-change: transform;
+}
+
+.WishButton_button * {
+    pointer-events: none;
+}
+
+.WishView_container .WishView_list .WishView_intersection {
+    height: 5px;
+}
+
+.InfoStringWrapper_infoString.InfoStringWrapper_isFinished {
+    opacity: 40%;
+    color: #495057;
+}
+
+.InfoStringWrapper_infoString {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    overflow-wrap: anywhere;
+    white-space: nowrap;
+    color: #00c4c4;
+}
+
+.RewardBadgeGroup_container {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+
