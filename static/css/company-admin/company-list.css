@@ -257,7 +257,7 @@
     background: url(/static/images/icon_filter.svg) no-repeat;
 }
 
-/* 다운로드 버튼 영역 */
+/* box-header, 다운로드 버튼 영역 */
 .wrap-section .box-header, .wrap-section .box-footer, .wrap-section~.wrap-btn-group {
     display: flexbox;
     display: flex;
@@ -273,7 +273,6 @@
 .wrap-section .box-header {
     border-bottom: 1px solid #e6eaed;
 }
-
 
 .wrap-section .box-header .box-option, .wrap-section .box-footer .box-right, .wrap-btn-group .box-right {
     margin-left: auto;
@@ -300,4 +299,67 @@
 
 .btn-secondary-outline.btn-icon .icon-download {
     background: url(/static/images/icon_download.svg) no-repeat 50% 50%;
+}
+
+/* box-body, 목록(그리드) 영역 */
+.ag-grid, .ag-grid-angular, .ag-grid-ng2, .ag-grid-polymer, .ag-grid-aurelia {
+    display: block;
+}
+
+.ag-grid {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.ag-grid-inner {
+    width: 100%;
+    height: 100%;
+}
+
+/* AG Grid */
+.ag-ltr {
+    direction: ltr;
+}
+
+.ag-root-wrapper {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    cursor: default;
+}
+
+.ag-root-wrapper-body {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+}
+
+/* AG Grid Body */
+.ag-unselectable {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.ag-root {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    position: relative;
+}
+
+.ag-root.ag-layout-normal, .ag-root.ag-layout-auto-height {
+    overflow: hidden;
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+    width: 0;
 }

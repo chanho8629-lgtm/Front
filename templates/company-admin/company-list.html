@@ -46,7 +46,7 @@
 
                 <!-- 선택된 탭의 내용 -->
                 <div class="comp-tab-content selected">
-                    <div class="wrap-section wrap-datagrid">
+                    <section class="wrap-section wrap-datagrid">
                         <!-- 날짜 조회 영역 -->
                         <form>
                             <div class="wrap-filter">
@@ -81,15 +81,36 @@
                                 </div>
                             </div>
                         </form>
+
+                        <!-- 헤더) 다운로드 버튼 영역 -->
                         <div class="box-header">
                             <div class="box-option">
-                               <button type="button" class="btn btn btn-secondary-outline btn-icon">
-                                <i class="icon icon-download"></i>
-                                다운로드
-                               </button> 
+                                <button type="button" class="btn btn btn-secondary-outline btn-icon">
+                                    <i class="icon icon-download"></i>
+                                    다운로드
+                                </button>
                             </div>
                         </div>
-                    </div>
+
+                        <!-- 바디) 목록 영역 -->
+                        <div class="box-body">
+                            <div class="ag-grid">
+                                <div class="ag-grid-inner">
+                                    <div style="height: 100%; --ag-line-height: 48px;">
+                                        <!-- AG Grid -->
+                                         <div class="ag-root-wrapper ag-ltr ag-keyboard-focus ag-layout-auto-height">
+                                            <div class="ag-root-wrapper-body ag-focus-managed ag-layout-auto-height">
+                                                <!-- AG Body -->
+                                                 <div class="ag-root ag-unselectable ag-layout-auto-height">
+                                                    
+                                                 </div>
+                                            </div>
+                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </div>
         </div>
