@@ -304,13 +304,14 @@ strong {
     transform: rotate(180deg);
 }
 
-.MenuItems_submenuContainer__ZDc4Y {
+/* 서브 메뉴 */
+.menu-items-submenu-container {
     transition: height .3s ease-out;
     height: 0;
     overflow-y: hidden;
 }
 
-.MenuItems_submenuContainer__ZDc4Y .MenuItems_submenu__MmYxO {
+.menu-items-submenu-container .menuitems-submenu {
     font-size: 14px;
     font-weight: 500;
     line-height: 1.5;
@@ -322,6 +323,13 @@ strong {
     color: #495057;
     gap: 4px;
 }
+
+.menu-items-submenu-container .menuitems-submenu.menuitems-active {
+    color: #212529;
+    font-weight: 700;
+}
+
+/* ----------- */
 
 .menu-items-menu.menu-items-disabled {
     position: relative;
