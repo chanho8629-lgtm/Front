@@ -280,8 +280,7 @@ strong {
     border-bottom: 1px solid #f2f4f6;
 }
 
-/* [추가/수정] has-submenu에서도 .menu-items-menu의 레이아웃을 통일하기 위해 
-   display:block → display:flex로 변경 */
+/* [추가/수정] (1번 방식) has-submenu에서도 .menu-items-menu의 레이아웃을 통일하기 위해 display:block → display:flex로 변경 */
 .menu-items-menu.menu-items-has-submenu {
     display: flex;
     outline: none;
@@ -294,8 +293,7 @@ strong {
     font-weight: 700;
 }
 
-/* [추가] 모든 .menu-items-menu에서 화살표(.menu-items-down-icon)가 
-   동일 위치(오른쪽 16px, 세로 중앙)에 고정되도록 통일 적용 */
+/* [추가] 모든 .menu-items-menu에서 화살표(.menu-items-down-icon)가 동일 위치(오른쪽 16px, 세로 중앙)에 고정되도록 통일 적용 */
 .menu-items-menu .menu-items-down-icon {
     position: absolute;
     top: 50%;
