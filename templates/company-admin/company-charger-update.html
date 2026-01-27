@@ -46,15 +46,15 @@
                             <li title="충전소 관리">
                                 <a href="#!">충전소 관리</a>
                             </li>
-                            <li title="새 충전소 등록">
-                                새 충전소 등록
+                            <li title="충전소 수정">
+                                충전소 수정
                             </li>
                         </ol>
                     </nav>
 
                     <!-- 헤더: 제목 -->
                     <header class="mb-5 header-style page-title">
-                        <h1>새 충전소 등록</h1>
+                        <h1>충전소 정보 수정</h1>
                     </header> 
 
                     <!-- 바디: 작성 내용 -->
@@ -65,34 +65,30 @@
                         <form class="request-form" id="new-request">
 
                             <!-- 작성 내용 -->
-                            <div class="form-field string required install-date">
+                            <div class="form-field string install-date">
                                 <label for="install-date">설치일자</label>
-                                <input type="text" id="install-date">
+                                <input type="text" id="install-date" name="installDate" value="2026-01-01" readonly>
+                                
                                 <!-- 기본 노출 메세지 -->
-                                <p class="field-hint">설치일자를 입력해주세요.</p>
-                                <!-- 에러 메세지 -->
-                                <p class="field-error" hidden>※필수 입력 항목입니다.</p>
+                                <p class="field-hint">※ 수정할 수 없는 정보입니다.</p>
                             </div>
 
                             <!-- 작성 내용 -->
-                            <div class="form-field string required station-number">
+                            <div class="form-field string station-number">
                                 <label for="station-number">충전소 번호</label>
-                                <input type="text" id="station-number">
+                                <input type="text" id="station-number" name="stationNumber" value="ST-000123" readonly>
                                 
                                 <!-- 기본 노출 메세지 -->
-                                <p class="field-hint">충전소 고유 번호를 입력해주세요.</p>
-                                
-                                <!-- 에러 메세지 -->
-                                <p class="field-error" hidden>※필수 입력 항목입니다.</p>
+                                <p class="field-hint" >※ 수정할 수 없는 정보입니다.</p>
                             </div>
 
                             <!-- 작성 내용 -->
-                            <div class="form-field string required install-address">
+                            <div class="form-field string install-address">
                                 <label for="install-address">설치주소</label>
                                 <input type="text" id="install-address">
                                
                                 <!-- 기본 노출 메세지 -->
-                                <p class="field-hint">충전소가 설치된 주소를 입력해주세요.</p>
+                                <p class="field-hint">변경 사항을 입력해주세요.</p>
                                
                                 <!-- 에러 메세지 -->
                                 <p class="field-error" hidden>※필수 입력 항목입니다.</p>
@@ -108,7 +104,7 @@
                             <!-- 푸터: 취소/완료 버튼 -->
                             <footer>
                                 <input type="submit" name="commit" value="취소">
-                                <input type="submit" name="commit" value="완료">
+                                <input type="submit" name="commit" value="수정 완료">
                             </footer>
                         </form>
 
