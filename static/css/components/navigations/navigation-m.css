@@ -126,11 +126,14 @@
     justify-content: center;
     border-radius: 50%;
     background-color: #dfdfdf;
-    transition: background 0.3s;
     width: 44px;
     height: 44px;
-    opacity: 0.4;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
 }
+.quickButton-container .quickButton-pageTop.active{visibility: visible; opacity: 0.6;pointer-events: auto;}
+
 .quickButton-container .quickButton-pageTop:hover {
     background: #dfdfdf;
 }
