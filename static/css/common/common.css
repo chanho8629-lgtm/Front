@@ -229,3 +229,14 @@ button[disabled].button-mint {
 /* yearBtns */
 .yearBtns{gap: 8px; margin-bottom: 16px; overflow-x: auto; padding-bottom: 4px;}
 .yearBtns > button{flex: none; border: 1px solid #eee;}
+
+/* 해드 배너 영역 */
+.headBanner-container{display: flex;align-items: center;justify-content: space-between;padding: 8px 16px;background-color: #212529; margin-top: -52px; transition: margin .3s;}
+.headBanner-container.active{margin-top: 0px;}
+.headBanner-left{display: flex;column-gap: 8px;align-items: center;}
+.headBanner-icon{display: flex;flex-grow: 0;align-items: center;justify-content: center;width: 32px;height: 32px;border-radius: 8px;}
+.headBanner-content{display: flex;flex-direction: column;flex-grow: 1;justify-content: flex-start;color: #fff;}
+.headBanner-title{font-size: 12px;font-weight: 700;line-height: 1.5;}
+.headBanner-right{display: flex;column-gap: 16px;align-items: center;}
+.headBanner-link{border-color: #00c4c4;background-color: #00c4c4;color: #fff;padding-inline: 12px;height: 32px;font-size: 14px;font-weight: 500;}
+.headBanner-close{margin-top: -2px;width: 16px;height: 16px;color: #fff;}
