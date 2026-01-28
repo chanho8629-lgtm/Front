@@ -285,7 +285,7 @@
     width: 150px;
     height: 100%;
     /* line-height: normal; */
-    line-height: 50px; /* 버튼 높이 */
+    line-height: 62px; /* 버튼 높이 */
 }
 
 .btn-icon .icon {
