@@ -171,7 +171,7 @@
     border-radius: 3px;
 }
 
-.comp-datepicker .tf-comm {
+/* .comp-datepicker .tf-comm {
     display: inline-block;
     position: relative;
     z-index: 1;
@@ -190,6 +190,46 @@
     border-color: initial;
     border-image: initial;
     background: transparent;
+} */
+
+/* 인풋태그 */
+.comp-datepicker .tf-comm {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    min-width: 120px;
+    height: 38px;
+    padding-left: 44px;
+    padding-right: 0;
+    border: none;
+    line-height: 36px;
+    background: transparent;
+    color: #202428;
+    letter-spacing: normal;
+    box-shadow: none;
+    cursor: pointer;
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* .comp-datepicker .tf-comm.datepicker-range {
+    width: 310px;
+    padding-left: 52px;
+} */
+
+.comp-datepicker .fc-2 {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 20px;
+    bottom: 0;
+    width: 100px;
+    height: 13px;
+    margin: auto;
+    text-align: center;
 }
 
 .comp-datepicker .tf-comm.datepicker-range {
@@ -599,19 +639,6 @@
     color: #868e96;
 }
 
-/* 페이지 사이즈 숨기기 */
-/* .select2-hidden-accessible {
-    overflow: hidden !important;
-    position: absolute !important;
-    width: 1px !important;
-    min-width: 1px !important;
-    height: 1px !important;
-    margin: -1px !important;
-    padding: 0 !important;
-    border: 0 !important;
-    clip: rect(0 0 0 0) !important;
-} */
-
 .select2-container {
     display: inline-block;
     z-index: 9997;
@@ -619,10 +646,10 @@
     vertical-align: middle;
 }
 
-.select2-container .select2-selection--single {
+.select2-container .select2-selection-single {
     display: block;
     position: relative;
-    height: 40px;
+    height: 32px;
     border: 1px solid #dde2e6;
     background: #fff;
     border-radius: 3px;
@@ -635,11 +662,11 @@
     outline: none;
 }
 
-.select2-single-search.small+.select2-container .select2-selection--single, .select2-single.small+.select2-container .select2-selection--single {
+.select2-single-search.small+.select2-container .select2-selection-single, .select2-single.small+.select2-container .select2-selection-single {
     height: 32px;
 }
 
-.select2-container .select2-selection--single .select2-selection-rendered {
+.select2-container .select2-selection-single .select2-selection-rendered {
     overflow: hidden;
     display: block;
     padding-left: 16px;
@@ -651,27 +678,34 @@
     white-space: nowrap;
 }
 
-.select2-single-search.small+.select2-container .select2-selection--single .select2-selection-rendered, .select2-single.small+.select2-container .select2-selection--single .select2-selection-rendered {
+/* .select2-single-search.small+.select2-container .select2-selection-single .select2-selection-rendered, .select2-single.small+.select2-container .select2-selection-single .select2-selection-rendered {
+    padding-left: 12px;
+    padding-right: 38px;
+    font-size: 12px;
+    line-height: 32px;
+} */
+
+.select2-container.small .select2-selection-single .select2-selection-rendered {
     padding-left: 12px;
     padding-right: 38px;
     font-size: 12px;
     line-height: 32px;
 }
 
-.select2-container .select2-selection--single .select2-selection-arrow {
+.select2-container .select2-selection-single .select2-selection-arrow {
     position: absolute;
     top: 0;
     right: 0;
     width: 40px;
-    height: 40px;
+    height: 32px;
 }
 
-.select2-single-search.small+.select2-container .select2-selection--single .select2-selection-arrow, .select2-single.small+.select2-container .select2-selection--single .select2-selection-arrow {
+.select2-single-search.small+.select2-container .select2-selection-single .select2-selection-arrow, .select2-single.small+.select2-container .select2-selection-single .select2-selection-arrow {
     width: 32px;
     height: 32px;
 }
 
-.select2-container .select2-selection--single .select2-selection-arrow b {
+.select2-container .select2-selection-single .select2-selection-arrow b {
     position: absolute;
     top: -2px;
     right: 0;
@@ -767,76 +801,116 @@
     background: url(/static/images/icon_double_arrow_right.svg) no-repeat -1px -1px;
 }
 
-/* 달력 영역 */
-.daterangepicker {
-    display: none;
+/* [input[type="date"] 기본 캘린더 아이콘 삭제
+/* 삭제 1) 크롬, 엣지, 사파리 */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+
+/* 삭제2) 파이어폭스 */
+input[type="date"] {
+  -moz-appearance: textfield;
+}
+
+/* 삭제 3) 공통: 기본 appearance 제거 */
+input[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
+} 
+
+/* 드롭다운 */
+.select2-container {
+    display: inline-block;
+    z-index: 9997;
+    margin: 0;
+    vertical-align: middle;
+}
+
+.select2-dropdown {
     position: absolute;
-    margin-top: 5px;
-    z-index: 10000;
+    top: 5px;
+    left: 0;
+    z-index: 1051;
     border: 1px solid #babdc0;
     background: #fff;
     border-radius: 3px;
     box-shadow: 0 32px 40px #0a164614;
 }
 
-.daterangepicker.show-ranges.opensleft {
-    margin-right: -81px;
-}
+/* 위로 열림 */
+/* .select2-container-open .select2-dropdown--above {
+    top: -5px;
+} */
 
-/* 날짜 선택 범위 */
-.daterangepicker .ranges {
-    float: right;
-}
-
-.daterangepicker .ranges ul {
-    padding: 22px 32px;
-}
-
-.daterangepicker .ranges ul li {
-    padding: 5px 6px;
-    margin: 10px 0;
-    font-size: 12px;
-    font-weight: 500;
-    color: #adb5bd;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.daterangepicker .ranges ul li[data-range-key="사용자 설정"] {
-    width: 69px;
-}
-
-/* 시작일 선택 달력 영역 */
-.daterangepicker .drp-calendar {
-    display: inline-block;
-    float: left;
-    padding: 36px 32px 32px;
-}
-
-.daterangepicker.show-ranges .drp-calendar.left, .daterangepicker.show-ranges .drp-calendar.right {
+.select2-search-dropdown {
+    display: block;
     position: relative;
-    padding-top: 72px;
+    margin: 12px 12px 2px;
 }
 
-.daterangepicker.show-ranges .drp-calendar.left {
-    padding-right: 18px;
+.select2-search-dropdown.select2-search-hide {
+    display: none;
 }
 
-.daterangepicker.show-ranges .drp-calendar.left:before, .daterangepicker.show-ranges .drp-calendar.right:before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 36px;
-    border-bottom: 1px solid #dde2e6;
+.select2-dropdown.small .select2-search-dropdown {
+    margin: 12px 12px 4px;
+}
+
+.select2-container .select2-search-dropdown .select2-search-field {
+    width: 100%;
+    height: 40px;
+    padding: 0 16px 0 42px;
+    border: 1px solid #dde2e6;
+    color: #202428;
+    border-radius: 3px;
+}
+
+.select2-dropdown.small .select2-search-dropdown .select2-search-field, .select2-dropdown.xsmall .select2-search-dropdown .select2-search-field {
+    height: 32px;
+    padding: 0 12px 0 37px;
+}
+
+.select2-container .select2-results>.select2-results-options {
+    overflow-y: auto;
+    width: 100%;
+    max-height: 220px;
+    padding: 10px 0;
+}
+
+.select2-dropdown.small .select2-results>.select2-results-options {
+    padding: 8px 0;
+}
+
+.select2-results-option {
+    padding: 9px 16px 10px;
+    line-height: 1.5;
+    color: #202428;
+    cursor: pointer;
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.select2-container .select2-results-option[aria-selected=true] {
+    position: relative;
+    color: #00b2b2;
+}
+
+.select2-container .select2-results-option-highlighted[aria-selected] {
+    background: #f2f4f6;
+}
+
+.select2-dropdown.small .select2-results-option {
+    padding: 7px 12px;
     font-size: 12px;
-    line-height: 36px;
-    background: #fafafb;
-    color: #495057;
-    text-align: center;
 }
 
-.daterangepicker.show-ranges .drp-calendar.left:before {
-    content: "시작일";
+/* 마우스 올렸을 때(하이라이트) → 배경 + 글자색 */
+.select2-container .select2-results-option-highlighted {
+  background: #f2f4f6;
+  color: #00b2b2;
 }
 

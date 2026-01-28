@@ -4,18 +4,20 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>기업 메인 - 거래목록</title>
-
         <!-- favicon -->
         <link rel="shortcut icon" href="https://wabiz-static-dev.s3.ap-northeast-2.amazonaws.com/static/favicon/favicon.png" type="image/x-icon" />
 
         <!-- 폰트 -->
         <link rel="stylesheet" href="/static/css/common/font.css" />
 
-        <!-- 공통 css 스타일 -->
+        <!-- 스타일 초기화 css -->
         <link rel="stylesheet" href="/static/css/common/reset.css" />
 
+        <!-- 공통 css -->
+        <link rel="stylesheet" href="/static/css/common/common.css">
+
         <!-- fontawesome 꾸며진 폰트 -->
-        <!-- <link rel="stylesheet" href="style.css"> -->
+        <link rel="stylesheet" href="/static/css/common/fontawesome.css">
 
         <!-- 유틸 css -->
         <link rel="stylesheet" href="/static/css/common/util.css" />
@@ -29,7 +31,7 @@
             <!-- 목록 헤더 영역 -->
             <div class="content-header">
                 <div class="box-tit">
-                    <h2 class="fz-36 fc-1 fw-bold">충전기 이용 내역</h2>
+                    <h2 class="fz-36 fc-1 fw-bold">거래 내역</h2>
                 </div>
             </div>
             <!-- 바디 영역 -->
@@ -66,7 +68,8 @@
                                                     <div class="inner-datepicker">
                                                         <!-- 캘린더 이미지 -->
                                                         <i class="icon icon-calendar"></i>
-                                                        <input type="text" class="tf-comm datepicker-range" id="datepicker" />
+                                                        <!-- ★ -->
+                                                        <input type="date" id="datepicker" class="tf-comm datepicker-range" />
                                                         <span class="fz-12 fc-2">사용자 설정</span>
                                                     </div>
                                                 </div>
@@ -74,7 +77,7 @@
                                         </div>
                                     </div>
                                     <div class="box-right">
-                                        <button type="submit" class="btn btn-tertiary-mint btn-icon">
+                                        <button type="submit" class="btn btn-tertiary-mint btn-icon" id="date-choice">
                                             <i class="icon icon-filter"></i>
                                             조회
                                         </button>
@@ -161,7 +164,6 @@
                                                             </div>
                                                         </div>
                                                     </div>
-
                                                     <!-- AG Middle -->
                                                     <!-- 행 내용 영역 -->
                                                     <div class="list-body-viewport list-row-no-animation list-layout-auto-height">
@@ -307,18 +309,29 @@
                             <!-- 페이지 사이즈 옵션 -->
                             <div class="box-right">
                                 <div class="pagenation">
-                                    <select class="select2-single small select2-hidden-accessible">
-                                        <option value="10">10 Row</option>
-                                        <option value="20">20 Row</option>
-                                        <option value="30">30 Row</option>
-                                        <option value="40">40 Row</option>
-                                        <option value="50">50 Row</option>
-                                    </select>
                                     <!-- 페이지 사이즈 목록 -->
-                                    <span class="select2 select2-container select2-container-default select2-container--below select2-container--focus" style="width: 120px">
+                                    <span class="select2 select2-container select2-container-default small select2-container-below select2-container-focus" style="width: 120px">
                                         <span class="selection">
-                                            <span class="select2-selection select2-selection--single">
-                                                <span class="select2-selection-rendered" id="select2-xdt6-container" title="10 Row">10 Row</span>
+                                            <span class="select2-selection select2-selection-single">
+                                                <span class="select2-selection-rendered" title="10 Row">10 Row</span>
+                                                <!-- 추가 -->
+                                                <span class="select2-container select2-container-default select2-container-open" style="position: absolute;">
+                                                    <span class="select2-dropdown small select2-dropdown-below none" style="width: 120px;">
+                                                        <span class="select2-search select2-search-dropdown select2-search-hide">
+                                                            <input class="select2-search-field" type="search" />
+                                                        </span>
+                                                        <span class="select2-results">
+                                                            <ul class="select2-results-options">
+                                                                <li class="select2-results-option">10 Row</li>
+                                                                <li class="select2-results-option">20 Row</li>
+                                                                <li class="select2-results-option">30 Row</li>
+                                                                <li class="select2-results-option">40 Row</li>
+                                                                <li class="select2-results-option">50 Row</li>
+                                                            </ul>
+                                                        </span>
+                                                    </span>
+                                                </span>
+                                                <!-- 목록 열림 화살표 -->
                                                 <span class="select2-selection-arrow">
                                                     <b></b>
                                                 </span>
@@ -356,194 +369,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- 달력 커스텀 -->
-        <div class="daterangepicker ltr show-ranges opensleft" style="top: 413px; right: 1269px; left: auto; display: block">
-            <!-- 조회 범위 선택 -->
-            <div class="ranges">
-                <ul>
-                    <li data-range-key="오늘 " class="">오늘</li>
-                    <li data-range-key="어제 " class="active">어제</li>
-                    <li data-range-key="이번 주 ">이번 주</li>
-                    <li data-range-key="저번 주 ">저번 주</li>
-                    <li data-range-key="최근 7일 ">최근 7일</li>
-                    <li data-range-key="최근 30일 " class="">최근 30일</li>
-                    <li data-range-key="사용자 설정" class="">사용자 설정</li>
-                </ul>
-            </div>
-
-            <!-- 시작일 선택 영역 -->
-            <div class="drp-calendar left">
-                <div class="calendar-table">
-                    <table class="table-condensed">
-                        <thead>
-                            <tr>
-                                <th class="prev available"><span></span></th>
-                                <th colspan="5" class="month">2025.12</th>
-                                <th></th>
-                            </tr>
-                            <tr>
-                                <th>Su</th>
-                                <th>Mo</th>
-                                <th>Tu</th>
-                                <th>We</th>
-                                <th>Th</th>
-                                <th>Fr</th>
-                                <th>Sa</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="weekend off available" data-title="r0c0">30</td>
-                                <td class="available" data-title="r0c1">1</td>
-                                <td class="available" data-title="r0c2">2</td>
-                                <td class="available" data-title="r0c3">3</td>
-                                <td class="available" data-title="r0c4">4</td>
-                                <td class="available" data-title="r0c5">5</td>
-                                <td class="weekend available" data-title="r0c6">6</td>
-                            </tr>
-                            <tr>
-                                <td class="weekend available" data-title="r1c0">7</td>
-                                <td class="available" data-title="r1c1">8</td>
-                                <td class="available" data-title="r1c2">9</td>
-                                <td class="available" data-title="r1c3">10</td>
-                                <td class="available" data-title="r1c4">11</td>
-                                <td class="available" data-title="r1c5">12</td>
-                                <td class="weekend available" data-title="r1c6">13</td>
-                            </tr>
-                            <tr>
-                                <td class="weekend available" data-title="r2c0">14</td>
-                                <td class="available" data-title="r2c1">15</td>
-                                <td class="available" data-title="r2c2">16</td>
-                                <td class="available" data-title="r2c3">17</td>
-                                <td class="available" data-title="r2c4">18</td>
-                                <td class="available" data-title="r2c5">19</td>
-                                <td class="weekend available" data-title="r2c6">20</td>
-                            </tr>
-                            <tr>
-                                <td class="weekend available" data-title="r3c0">21</td>
-                                <td class="available" data-title="r3c1">22</td>
-                                <td class="available" data-title="r3c2">23</td>
-                                <td class="available" data-title="r3c3">24</td>
-                                <td class="available" data-title="r3c4">25</td>
-                                <td class="available" data-title="r3c5">26</td>
-                                <td class="weekend available" data-title="r3c6">27</td>
-                            </tr>
-                            <tr>
-                                <td class="weekend available" data-title="r4c0">28</td>
-                                <td class="available" data-title="r4c1">29</td>
-                                <td class="available" data-title="r4c2">30</td>
-                                <td class="available" data-title="r4c3">31</td>
-                                <td class="off available" data-title="r4c4">1</td>
-                                <td class="off available" data-title="r4c5">2</td>
-                                <td class="weekend off available" data-title="r4c6">3</td>
-                            </tr>
-                            <tr>
-                                <td class="weekend off available" data-title="r5c0">4</td>
-                                <td class="off available" data-title="r5c1">5</td>
-                                <td class="off available" data-title="r5c2">6</td>
-                                <td class="off available" data-title="r5c3">7</td>
-                                <td class="off available" data-title="r5c4">8</td>
-                                <td class="off available" data-title="r5c5">9</td>
-                                <td class="weekend off available" data-title="r5c6">10</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="calendar-time" style="display: none"></div>
-            </div>
-            
-            <!-- 종료일 선택 영역 -->
-            <div class="drp-calendar right">
-                <div class="calendar-table">
-                    <table class="table-condensed">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th colspan="5" class="month">2026.01</th>
-                                <th></th>
-                            </tr>
-                            <tr>
-                                <th>Su</th>
-                                <th>Mo</th>
-                                <th>Tu</th>
-                                <th>We</th>
-                                <th>Th</th>
-                                <th>Fr</th>
-                                <th>Sa</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="weekend off available" data-title="r0c0">28</td>
-                                <td class="off available" data-title="r0c1">29</td>
-                                <td class="off available" data-title="r0c2">30</td>
-                                <td class="off available" data-title="r0c3">31</td>
-                                <td class="available" data-title="r0c4">1</td>
-                                <td class="available" data-title="r0c5">2</td>
-                                <td class="weekend available" data-title="r0c6">3</td>
-                            </tr>
-                            <tr>
-                                <td class="weekend available" data-title="r1c0">4</td>
-                                <td class="available" data-title="r1c1">5</td>
-                                <td class="available" data-title="r1c2">6</td>
-                                <td class="available" data-title="r1c3">7</td>
-                                <td class="available" data-title="r1c4">8</td>
-                                <td class="available" data-title="r1c5">9</td>
-                                <td class="weekend available" data-title="r1c6">10</td>
-                            </tr>
-                            <tr>
-                                <td class="weekend available" data-title="r2c0">11</td>
-                                <td class="available" data-title="r2c1">12</td>
-                                <td class="available" data-title="r2c2">13</td>
-                                <td class="available" data-title="r2c3">14</td>
-                                <td class="available" data-title="r2c4">15</td>
-                                <td class="available" data-title="r2c5">16</td>
-                                <td class="weekend available" data-title="r2c6">17</td>
-                            </tr>
-                            <tr>
-                                <td class="weekend available" data-title="r3c0">18</td>
-                                <td class="active start-date active end-date available" data-title="r3c1">19</td>
-                                <td class="available" data-title="r3c2">20</td>
-                                <td class="off disabled" data-title="r3c3">21</td>
-                                <td class="today off disabled" data-title="r3c4">22</td>
-                                <td class="off disabled" data-title="r3c5">23</td>
-                                <td class="weekend off disabled" data-title="r3c6">24</td>
-                            </tr>
-                            <tr>
-                                <td class="weekend off disabled" data-title="r4c0">25</td>
-                                <td class="off disabled" data-title="r4c1">26</td>
-                                <td class="off disabled" data-title="r4c2">27</td>
-                                <td class="off disabled" data-title="r4c3">28</td>
-                                <td class="off disabled" data-title="r4c4">29</td>
-                                <td class="off disabled" data-title="r4c5">30</td>
-                                <td class="weekend off disabled" data-title="r4c6">31</td>
-                            </tr>
-                            <tr>
-                                <td class="weekend off off disabled" data-title="r5c0">1</td>
-                                <td class="off off disabled" data-title="r5c1">2</td>
-                                <td class="off off disabled" data-title="r5c2">3</td>
-                                <td class="off off disabled" data-title="r5c3">4</td>
-                                <td class="off off disabled" data-title="r5c4">5</td>
-                                <td class="off off disabled" data-title="r5c5">6</td>
-                                <td class="weekend off off disabled" data-title="r5c6">7</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="calendar-time" style="display: none"></div>
-            </div>
-
-            <!-- 선택 범위 확인/취소/적용 영역 -->
-            <div class="drp-buttons">
-                <!-- 선택된 옵션 표시 -->
-                <span class="daterangepicker-range-txt">( 어제 )</span>
-                <!-- 선택된 날짜 범위 표시 -->
-                <span class="drp-selected">01/19/2026 - 01/19/2026</span>
-                <!-- 취소/적용 버튼 -->
-                <button class="cancelBtn btn btn-sm btn-default" type="button">취소</button>
-                <button class="applyBtn btn btn-sm btn-primary" type="button">적용</button>
-            </div>
-        </div>
     </body>
+    <script src="/static/js/company-admin/company-list.js"></script>
 </html>

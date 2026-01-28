@@ -55,6 +55,9 @@
 .input-message.nomal {
     color: #868e96;
 }
+.input-message.color-mint {
+    color: #00c4c4;
+}
 .Field-box {}
 .inputField .input{
     flex-grow: 1;
@@ -277,12 +280,20 @@
 }
 
 
+.ZZOneForm,
 .passwordForm{
     display: flex;
     flex-direction: column;
     gap: 24px;
     width: 100%;
     max-width: 560px;
+}
+.ZZOneForm .inputField input{
+}
+.ZZOneForm .inputField span{
+    display: inline-block;
+    white-space: nowrap;
+    padding: 0 16px 0 6px;
 }
 
 .currentPassword-container{
