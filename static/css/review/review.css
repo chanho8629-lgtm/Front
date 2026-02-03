@@ -931,3 +931,36 @@ button.PopMenu_menu_r {
 .ConfirmModal_overlay{
     display: none;
 }
+
+
+.Toast_content {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #fff;
+    pointer-events: all;
+}
+
+.Toast_container {
+    display: none; 
+    position: fixed;
+    top: 20px;
+    left: 16px;
+    right: 16px;
+    margin: 0 auto;
+    max-width: 400px;
+    background-color: #212529;
+    padding: 16px;
+    border-radius: 8px;
+    z-index: 10000;
+}
+
+.Toast_container.Toast_showMobile {
+    display: block !important; 
+    animation: toastFadeIn 1s ease forwards;
+}
+
+@keyframes toastFadeIn {
+    0% { transform: translateY(-100px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}

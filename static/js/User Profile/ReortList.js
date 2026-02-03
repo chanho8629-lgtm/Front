@@ -22,6 +22,8 @@ document.querySelector('.Tabs-module_tabs').addEventListener('click', (e) => {
 
 const toast = document.querySelector(".Toast-module_container");
 const buttons = document.querySelectorAll(".close_button");
+const lists = document.querySelectorAll(".BlockedSupporterCard-module_blockSupporterCard");
+
 
 buttons.forEach(button => {
     button.addEventListener("click", (e) => {
@@ -33,4 +35,12 @@ buttons.forEach(button => {
             toast.classList.remove("Toast-module_show");
         }, 1000);
     });
+});
+
+
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    
+    lists.remove();
+  });
 });

@@ -1,50 +1,64 @@
-//  탭 
-const tabsContainer = document.querySelector('.Tabs-module_tabs');
-const panels = document.querySelectorAll('.TabPanels-module_tabPanels > div'); 
+document.addEventListener("DOMContentLoaded", () => {
+    // ===== 팔로우 버튼 =====
+    const followButtons = document.querySelectorAll(".FollowingCard-module_right button");
 
-tabsContainer.addEventListener('click', (e) => {
-    const tab = e.target.closest('.Tab-module_tab');
+    followButtons.forEach((btn) => {
+        const textSpan = btn.querySelector("span span"); // 또는 "span:last-child"
+        const id = btn.dataset.id; // HTML에서 <button data-id="123"> 필요
 
-    // 모든 탭 비활성화
-    document.querySelectorAll('.Tab-module_tab').forEach(t => t.classList.remove('Tab-module_active'));
-
-    // 클릭한 탭 활성화
-    tab.classList.add('Tab-module_active');
-
-    const value = tab.dataset.value;
-    panels.forEach(panel => {
-        panel.style.display = (panel.dataset.value === value) ? 'block' : 'none';
-    });
-});
-
-// 토스트
-const toast = document.querySelector(".Toast-module_container");
-const toastButtons = document.querySelectorAll(".close_button");
-
-toastButtons.forEach(button => {
-    button.addEventListener("click", () => {
-        toast.classList.add("Toast-module_show");
-
-        setTimeout(() => {
-            toast.classList.remove("Toast-module_show");
-        }, 2000);
-    });
-});
-
-//  팔로잉 / 팔로우 토글 
-const followButtons = document.querySelectorAll(".FollowingCard-module_right .Button-module_button");
-
-followButtons.forEach(button => {
-    button.addEventListener("click", () => {
-        const spanText = button.querySelector("span:last-child");
-        if (spanText.textContent === "팔로잉") {
-            spanText.textContent = "팔로우";
-            button.classList.remove("Button-module_gray");
-            button.classList.add("Button-module_blue"); 
+        // 저장된 상태 불러오기
+        const saved = localStorage.getItem("follow_" + id);
+        if (saved === "following") {
+            textSpan.textContent = "팔로잉";
+            btn.classList.remove("Button-module_mint");
+            btn.classList.add("Button-module_gray");
         } else {
-            spanText.textContent = "팔로잉";
-            button.classList.remove("Button-module_blue");
-            button.classList.add("Button-module_gray");
+            textSpan.textContent = "팔로우";
+            btn.classList.remove("Button-module_gray");
+            btn.classList.add("Button-module_mint");
         }
+
+        // 클릭 이벤트
+        btn.addEventListener("click", () => {
+            if (textSpan.textContent === "팔로잉") {
+                textSpan.textContent = "팔로우";
+                btn.classList.remove("Button-module_gray");
+                btn.classList.add("Button-module_mint");
+                localStorage.setItem("follow_" + id, "unfollow");
+            } else {
+                textSpan.textContent = "팔로잉";
+                btn.classList.remove("Button-module_mint");
+                btn.classList.add("Button-module_gray");
+                localStorage.setItem("follow_" + id, "following");
+            }
+        });
     });
+
+    // ===== 탭 토글 =====
+    const followingTab = document.querySelector('[data-value="1"]');
+    const followerTab = document.querySelector('[data-value="3"]');
+    const followingPanel = document.querySelector(".FollowingSupporter-module_container");
+    const followerPanel = document.querySelector(".FollowerSupporter-module_container");
+
+    if (followingTab && followerTab && followingPanel && followerPanel) {
+        followerTab.addEventListener("click", () => {
+            followingPanel.style.display = "none";
+            followerPanel.style.display = "block";
+            followingTab.classList.remove("Tab-module_active");
+            followerTab.classList.add("Tab-module_active");
+        });
+
+        followingTab.addEventListener("click", () => {
+            followerPanel.style.display = "none";
+            followingPanel.style.display = "block";
+            followerTab.classList.remove("Tab-module_active");
+            followingTab.classList.add("Tab-module_active");
+        });
+    }
 });
+
+console.log("followingPanel:", document.querySelector(".FollowingSupporter-module_container"));
+console.log("followerPanel:", document.querySelector(".FollowerSupporter-module_container"));
+
+// 혹은 이렇게도 확인
+console.log("모든 div:", document.querySelectorAll("div[class*='Supporter']"));

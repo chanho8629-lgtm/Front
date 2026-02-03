@@ -170,7 +170,7 @@ wishButtonremoves.forEach(button => {
     });
 });
 
-const score = 20;  
+const score =89;  
 
 const batteryWrapper = document.querySelector(".MyGGshSupporterProfileCard_profileUser .battery-wrapper");
 if (batteryWrapper) {
@@ -179,14 +179,28 @@ if (batteryWrapper) {
     // 숨기기
     batteries.forEach(battery => battery.style.display = "none");
 
-    // 점수 계산
+    // 점수 계산 및 색 지정
     let lengs = 0;
-    if (score >= 0 && score < 20) lengs = 0;
-    else if (score >= 20 && score < 40) lengs = 1;
-    else if (score >= 40 && score < 60) lengs = 2;
-    else if (score >= 60 && score < 80) lengs = 3;
-    else if (score >= 80 && score <= 100) lengs = 4;
+    let color = "";
 
-    // 해당 아이콘만 보이게
+    if (score >= 0 && score < 20) {
+        lengs = 0;
+        color = "red";
+    } else if (score >= 20 && score < 40) {
+        lengs = 1;
+        color = "#FFC53D";
+    } else if (score >= 40 && score < 60) {
+        lengs = 2;
+        color = "#E5E53D";
+    } else if (score >= 60 && score < 80) {
+        lengs = 3;
+        color = "#B9EB45";
+    } else if (score >= 80 && score <= 100) {
+        lengs = 4;
+        color = "#52C41A";
+    }
+
+    // 해당 아이콘만 보이게 하고 색 적용
     batteries[lengs].style.display = "inline-block";
+    batteries[lengs].style.color = color;
 }

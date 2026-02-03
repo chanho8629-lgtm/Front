@@ -204,5 +204,36 @@ toggle.addEventListener("click", () => {
         label.classList.remove('toggle_active');
     }
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const editBtn = document.querySelector(".profileEdit");
+  const fileInput = document.getElementById("profileInput");
+  const profileImage = document.getElementById("profileImage");
 
+  if (!editBtn || !fileInput || !profileImage) return;
 
+  /* 사진 변경 버튼 클릭 */
+  editBtn.addEventListener("click", () => {
+    fileInput.click();
+  });
+
+  /* 파일 선택 시 */
+  fileInput.addEventListener("change", (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    if (!file.type.match(/^image\/(png|jpeg|jpg)$/)) {
+      alert("이미지 파일만 가능합니다");
+      fileInput.value = "";
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      // ⭐ 즉시 프로필 이미지 변경
+      profileImage.src = ev.target.result;
+    };
+
+    reader.readAsDataURL(file);
+    fileInput.value = "";
+  });
+});

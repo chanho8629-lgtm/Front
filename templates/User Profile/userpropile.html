@@ -5,16 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../../static/css/common/font.css" />
+    <link rel="stylesheet" href="../../static/css/common/reset.css" />
+    <link rel="stylesheet" href="../../static/css/common/fontawesome.css" />
+    <link rel="stylesheet" href="../../static/css/common/common.css" />
+    <link rel="stylesheet" href="../../static/css/common/util.css" />
+    <link rel="stylesheet" href="../../static/css/components/modals/modal-m.css">
     <link rel="stylesheet" href="/static/css/User Profile/userprofile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="/static/css/User Profile/profile.css">
 </head>
 
 <body>
-    <div id="GGSH-toast-container-component">
-        <div class="ToastContainer_container">
-            <div class="Toast_container">
-                <div id="toast1" class="Toast_content">차단되었습니다.</div>
-                <div id="toast2" class="Toast_content">차단 해체 되었습니다.</div>
-                <div id="toast3" class="Toast_content">팔로우 되었습니다.</div>
+    <div id="toast" class="toast-container">
+        <div class="toast-wrap">
+            <div id="toast1" class="toast_hide show-container none">
+                <div class="show-content">차단되었습니다.</div>
+            </div>
+            <div id="toast2" class="toast_hide show-container none">
+                <div class="show-content">차단 해체 되었습니다.</div>
+            </div>
+            <div id="toast3" class="toast_hide show-container none">
+                <div class="show-content">팔로우 되었습니다.</div>
             </div>
         </div>
     </div>
@@ -56,9 +68,16 @@
                                         class="SupporterProfileInfo_supporterInfo SupporterProfileInfo_emptySupporterInfo">
                                         <dl class="SupporterProfileInfo_infoBox" aria-label="서포터 정보">
                                             <dt class="BlindText_textBlind">서포터 닉네임</dt>
-                                            <dd class="SupporterProfileInfo_nickname">닉네임을 등록해주세요</dd><button
-                                                class="SupporterProfileContextMenu_contextMenuButton" type="button"
-                                                aria-label="서포터 컨텍스트 메뉴 더보기"><svg viewBox="0 0 24 24"
+                                            <dd class="SupporterProfileInfo_nickname">닉네임을 등록해주세요</dd>
+                                            <div class="battery-wrapper">
+                                                <i class="fa-solid fa-battery-empty"></i>
+                                                <i class="fa-solid fa-battery-quarter"></i>
+                                                <i class="fa-solid fa-battery-half"></i>
+                                                <i class="fa-solid fa-battery-three-quarters"></i>
+                                                <i class="fa-solid fa-battery-full"></i>
+                                            </div>
+                                            <button class="SupporterProfileContextMenu_contextMenuButton" type="button"
+                                                aria-label=""><svg viewBox="0 0 24 24"
                                                     xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
                                                     class="WithProps_icon">
                                                     <path
@@ -123,8 +142,7 @@
                                                 data-ec-name="[14,642%앵콜] 척추전문가가 만든 편안함&amp;가벼움 HBB 물방울백"
                                                 data-ec-signature-discount-rate="0" data-ec-brand="세이브힐즈 (주)포스팀"
                                                 data-ec-contenttype="PREORDER">
-                                                <div class="SupporterProfileHomeVerticalCard_thumbnailBox-g1v"
-                                                    style="padding-top: 56.25%;">
+                                                <div class="SupporterProfileHomeVerticalCard_thumbnailBox-g1v">
                                                     <div class="SupporterProfileHomeVerticalCard_thumbnailWrap-y">
                                                         <div
                                                             class="ThumbnailImage_container SupporterProfileHomeVerticalCard_thumbnail">
@@ -171,8 +189,7 @@
                                                 data-ec-name="[풀무원 등장] 요리에서 세척까지 깔끔 그 자체! 글라스쿡 에어프라이어"
                                                 data-ec-signature-discount-rate="0" data-ec-brand="풀무원 건강생활"
                                                 data-ec-contenttype="PREORDER">
-                                                <div class="SupporterProfileHomeVerticalCard_thumbnailBox-g1v"
-                                                    style="padding-top: 56.25%;">
+                                                <div class="SupporterProfileHomeVerticalCard_thumbnailBox-g1v">
                                                     <div class="SupporterProfileHomeVerticalCard_thumbnailWrap-y">
                                                         <div
                                                             class="ThumbnailImage_container SupporterProfileHomeVerticalCard_thumbnail">
@@ -237,9 +254,9 @@
                                                 </a>
                                                 <div class="CommentProfile_followArea"><button
                                                         class="Button_button Button_mint Button_sm Buttonremove"
-                                                        type="button"><span><svg viewBox="0 0 24 24"
-                                                                xmlns="http://www.w3.org/2000/svg" width="14"
-                                                                class="WithProps_icon Button_icon"
+                                                        type="button" onclick="showToast('toast3');"><span><svg
+                                                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                                                width="14" class="WithProps_icon Button_icon"
                                                                 style="height: 14px; width: 14px;">
                                                                 <path
                                                                     d="M11.4 12.6V22h1.2v-9.4H22v-1.2h-9.4V2h-1.2v9.4H2v1.2h9.4z"
@@ -356,7 +373,7 @@
                                                 <div class="CommentContentHeader_right"></div>
                                             </div>
                                             <p class="CommentContentArea_fullComment">
-                                               가나다라마바사아자차카타파하
+                                                가나다라마바사아자차카타파하
                                             </p>
                                         </div>
                                         <div class="CommunityArea_container">
@@ -375,12 +392,15 @@
     </div>
     <div>
         <div id="backbodal" class="ContextMenu_background"></div>
-        <div class="ContextMenu_container" style="top: 75.5px;left: 210.4px;"><button
-                class="ContextMenu_warning">신고하기</button><button class="ContextMenubt">차단하기</button></div>
+        <div class="ContextMenu_container" style="top: 75.5px;left: 210.4px;">
+            <button class="ContextMenu_warning" type="button" onclick="">신고하기</button>
+            <button class="ContextMenubt" type="button">차단하기</button>
+        </div>
     </div>
     <div class="ReactModalPortal">
-        <div is="modal1" class="ConfirmModal_overlay waffle__modal__overlay "
-            style="background-color: rgba(0, 0, 0, 0.2);">
+        <!-- ===== MODAL1: 차단하기 모달 (초기: 숨김) ===== -->
+        <div is="modal1" class="ConfirmModal_overlay "
+            style="background-color: rgba(0, 0, 0, 0.2); display: none;">
             <div class="ConfirmModal_confirmModal-6 ConfirmModal_sizeMobile ConfirmModal_contentAfterOpen" tabindex="-1"
                 role="dialog" aria-modal="true">
                 <div class="ConfirmModal_header" style="padding-left: 24px; padding-right: 24px;">
@@ -412,8 +432,10 @@
                 </div>
             </div>
         </div>
-        <div id="modal2" class="ConfirmModal_overlay waffle__modal__overlay "
-            style="background-color: rgba(0, 0, 0, 0.2);">
+
+        <!-- ===== MODAL2: 신고하기 모달 (초기: 숨김) ===== -->
+        <div id="modal2" class="ConfirmModal_overlay "
+            style="background-color: rgba(0, 0, 0, 0.2); display: none;">
             <div class="ConfirmModal_confirmModal-6 ConfirmModal_sizeMobile ConfirmModal_contentAfterOpen" tabindex="-1"
                 role="dialog" aria-modal="true">
                 <div class="ConfirmModal_header" style="padding-left: 24px; padding-right: 24px;">
@@ -466,5 +488,6 @@
     </div>
 </body>
 <script src="/static/js/User Profile/userpropile.js"></script>
+<script src="../../static/js/modals/modal-m.js"></script>
 
 </html>

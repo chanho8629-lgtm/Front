@@ -766,7 +766,7 @@ strong {
     gap: 2px;
 }
 
-.imgbettary{
+.imgbettary {
     max-width: 20%;
     opacity: 0.9;
 
@@ -1938,17 +1938,26 @@ button {
 }
 
 .battery-wrapper {
-    position: relative;   
-    width: 50px;         
-    height: 24px;         
+    position: relative;
+    width: 50px;
+    height: 24px;
 }
 
 .battery-wrapper i {
-    position: absolute;  
+    position: absolute;
     top: 0;
     left: 0;
-    color: gray;          
-    font-size: 24px;      
+    color: gray;
+    font-size: 24px;
     transition: all 0.3s;
 }
 
+@media (max-width: 768px) {
+    .LoginLogoutButton_buttonWrapper {
+        margin-bottom: 100px;
+    }
+}
+
+.addessPin-container {
+    padding: 260px !important;
+}

@@ -1908,10 +1908,6 @@ body {
     transform: translateY(100%)
 }
 
-.ConfirmModal_overlayTransparent__DHwOY {
-    box-shadow: 0 -16px 16px -1px #0a16461a,0 0 5px #0a16460f
-}
-
 .Button_loader {
     background-color: #0000
 }
@@ -33995,4 +33991,43 @@ button.PopMenu_menu {
     height: 16px;
     bottom: 4px;
     right: 0;
+}
+
+
+.battery-wrapper {
+    width: 110px !important;
+}
+
+/* ===== 모달 애니메이션 ===== */
+@keyframes ConfirmModal_overlayInit {
+    0% {
+        background-color: #0000
+    }
+    to {
+        background-color: #0003
+    }
+}
+
+/* ===== 모달 기본 상태 (닫혀있음) ===== */
+.ConfirmModal_overlay {
+    display: none !important;
+    position: fixed;
+    inset: 0;
+    align-items: center;
+    justify-content: center;
+    z-index: 32;
+    background-color: #0000;
+    overflow: hidden;
+}
+
+/* ===== 모달 열린 상태 (modal-open 클래스 추가됨) ===== */
+.ConfirmModal_overlay.modal-open {
+    display: inline-flex !important;
+    animation: ConfirmModal_overlayInit .25s forwards;
+}
+
+/* ===== 모달 내부 박스 ===== */
+.ConfirmModal_confirmModal-6 {
+    position: relative;
+    z-index: 33;
 }
