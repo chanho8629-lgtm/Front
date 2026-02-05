@@ -221,6 +221,32 @@
     });     */
   </script>
 
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const emailInput = document.getElementById('username');
+      const errorMessage = document.querySelector(
+        '.EmailValidationForm-module_error__cbcb7'
+      );
+      const nextButton = document.querySelector(
+        '.Button-module_button__d78c2.Button-module_mint__1c1d6'
+      );
+  
+      // 이벤트 위임
+      document.addEventListener('click', (e) => {
+        const clearBtn = e.target.closest('.TextField-module_clearIcon__c58f8');
+        if (!clearBtn) return;
+  
+        // 초기화
+        emailInput.value = '';
+        emailInput.focus();
+  
+        errorMessage.style.display = 'none';
+        nextButton.disabled = true;
+        nextButton.classList.add('Button-module_disabled__2ebf2');
+      });
+    });
+  </script>
+
 </html>
 
 
